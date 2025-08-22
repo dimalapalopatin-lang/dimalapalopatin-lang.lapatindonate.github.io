@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дякую</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000000, #8B0000);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      line-height: 1.5em;
+      animation: slideDown 1s ease forwards;
+      opacity: 0;
+    }
+
+    .card-section {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .card-number {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: all;
+    }
+
+    .card-number img {
+      width: 32px;
+      height: auto;
+    }
+
+    .copy-btn {
+      padding: 10px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff3333;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .copy-btn:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      animation: fadeInUp 2s ease forwards;
+      opacity: 0;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .links a img {
+      width: 26px;
+      height: auto;
+    }
+
+    .links a:hover {
+      color: #ff6666;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      opacity: 0.5;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <h1>Дякую за ваш внесок<br>мої соц мережі та музика нижче</h1>
+
+  <div class="card-section">
+    <div class="card-number" id="card-number">
+      <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" alt="Card Icon">
+      4790 7299 5888 9370
+    </div>
+    <button class="copy-btn" onclick="copyCard()">Copy</button>
+  </div>
+
+  <div class="links">
+    <a href="https://open.spotify.com/artist/4OT9kILqfxxZDUPVoH1VD7" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">Spotify
+    </a>
+    <a href="https://www.tiktok.com/@lapatindima?_t=ZM-8yx1vF1Vwfu&_r=1" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25347.png" alt="Link">TikTok
+    </a>
+    <a href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCOSe0Vqapuhc0F8P7oyfOYA" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">YouTube
+    </a>
+  </div>
+
+  <footer>© Lapa Dima</footer>
+
+  <script>
+    function copyCard() {
+      const cardText = document.getElementById('card-number').textContent.trim();
+      navigator.clipboard.writeText(cardText).then(() => {
+        alert("Card number copied!");
+      });
+    }
+
+    // Trigger animations (in case you'd like to delay them later)
+    window.onload = () => {
+      document.querySelector("h1").style.opacity = 1;
+      document.querySelector(".card-section").style.opacity = 1;
+      document.querySelector(".links").style.opacity = 1;
+      document.querySelector("footer").style.opacity = 1;
+    };
+  </script>
+</body>
+</html>
