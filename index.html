@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Дякую</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAPATIN — Дякую за підтримку</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -22,34 +25,33 @@
       min-height: 100vh;
       text-align: center;
       padding: 20px;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 1.5s ease;
     }
 
     h1 {
       font-size: 2.2em;
       margin-bottom: 30px;
-      line-height: 1.5em;
+      line-height: 1.5;
       animation: slideDown 1s ease forwards;
-      opacity: 0;
     }
 
     .card-section {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 20px 30px;
       border-radius: 15px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: fadeInUp 1.5s ease forwards;
-      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
     }
 
     .card-number {
-      font-size: 1.5em;
-      margin-bottom: 10px;
+      font-size: 1.35em;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
       user-select: all;
     }
@@ -62,6 +64,7 @@
     .copy-btn {
       padding: 10px 25px;
       font-size: 1em;
+      font-family: inherit;
       border: none;
       border-radius: 10px;
       background-color: #ff3333;
@@ -72,7 +75,27 @@
 
     .copy-btn:hover {
       background-color: #cc0000;
-      transform: scale(1.05);
+      transform: scale(1.04);
+    }
+
+    .repertoire-link {
+      display: inline-block;
+      max-width: 100%;
+      margin: 0 0 30px;
+      padding: 14px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(255, 51, 51, 0.2);
+      color: white;
+      font-size: 1.05em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .repertoire-link:hover {
+      background: rgba(255, 51, 51, 0.4);
+      transform: translateY(-2px);
     }
 
     .links {
@@ -80,15 +103,13 @@
       flex-direction: column;
       align-items: center;
       gap: 15px;
-      animation: fadeInUp 2s ease forwards;
-      opacity: 0;
     }
 
     .links a {
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fff;
+      color: white;
       font-size: 1.2em;
       text-decoration: none;
       transition: color 0.2s, transform 0.2s;
@@ -107,70 +128,118 @@
     footer {
       margin-top: 40px;
       font-size: 0.8em;
-      opacity: 0.5;
-      animation: fadeIn 3s ease forwards;
+      opacity: 0.6;
     }
 
-    /* Animations */
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes slideDown {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.65em;
+      }
+
+      .card-section {
+        padding: 18px 14px;
+      }
+
+      .card-number {
+        font-size: 1.05em;
+        gap: 8px;
+      }
+
+      .repertoire-link {
+        font-size: 0.95em;
+        padding: 12px 15px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Дякую за ваш внесок<br>мої соц мережі та музика нижче</h1>
+
+  <h1>Дякую за ваш внесок<br>Мої соцмережі та музика нижче</h1>
 
   <div class="card-section">
     <div class="card-number" id="card-number">
       <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" alt="Card Icon">
-      4790 7299 5888 9370
+      <span>4790 7299 5888 9370</span>
     </div>
-    <button class="copy-btn" onclick="copyCard()">Copy</button>
+
+    <button class="copy-btn" onclick="copyCard()">Скопіювати номер картки</button>
   </div>
 
+  <a class="repertoire-link" href="./songs.html">
+    🎵 Знайти пісню в репертуарі
+  </a>
+
   <div class="links">
-    <a href="https://open.spotify.com/artist/4OT9kILqfxxZDUPVoH1VD7" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">Spotify
+
+    <a href="https://open.spotify.com/artist/4OT9kILqfxxZDUPVoH1VD7" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+      Spotify
     </a>
-    <a href="https://www.tiktok.com/@lapatindima?_t=ZM-8yx1vF1Vwfu&_r=1" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25347.png" alt="Link">TikTok
+
+    <a href="https://www.tiktok.com/@lapatindima?_t=ZM-8yx1vF1Vwfu&_r=1" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25347.png" alt="TikTok">
+      TikTok
     </a>
-    <a href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram
+
+    <a href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      Instagram
     </a>
-    <a href="https://www.youtube.com/channel/UCOSe0Vqapuhc0F8P7oyfOYA" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">YouTube
+
+    <a href="https://www.youtube.com/channel/UCOSe0Vqapuhc0F8P7oyfOYA" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      YouTube
     </a>
+
   </div>
 
   <footer>© Lapa Dima</footer>
 
   <script>
     function copyCard() {
-      const cardText = document.getElementById('card-number').textContent.trim();
-      navigator.clipboard.writeText(cardText).then(() => {
-        alert("Card number copied!");
-      });
+      const cardText = "4790 7299 5888 9370";
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(cardText)
+          .then(() => alert("Номер картки скопійовано!"))
+          .catch(() => manualCopy(cardText));
+      } else {
+        manualCopy(cardText);
+      }
     }
 
-    // Trigger animations (in case you'd like to delay them later)
-    window.onload = () => {
-      document.querySelector("h1").style.opacity = 1;
-      document.querySelector(".card-section").style.opacity = 1;
-      document.querySelector(".links").style.opacity = 1;
-      document.querySelector("footer").style.opacity = 1;
-    };
+    function manualCopy(text) {
+      const input = document.createElement("textarea");
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+
+      try {
+        document.execCommand("copy");
+        alert("Номер картки скопійовано!");
+      } catch (error) {
+        alert("Не вдалося скопіювати. Номер картки: " + text);
+      }
+
+      input.remove();
+    }
   </script>
+
 </body>
 </html>
