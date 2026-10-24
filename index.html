@@ -2,447 +2,599 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111110">
-  <meta name="description" content="LAPATIN — музика, живі виступи та підтримка незалежного артиста.">
-  <title>LAPATIN — музика і підтримка</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100909">
+<meta name="description" content="LAPATIN — музика, онлайн-уроки вокалу та живі виступи на ваших подіях.">
+<title>LAPATIN — музика, вокал, живі виступи</title>
 
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #111110;
-      --panel: #1b1b19;
-      --text: #f2efe7;
-      --muted: #aaa69c;
-      --line: #3a3933;
-      --accent: #d6ff4f;
-    }
+<style>
+:root {
+  --bg: #100909;
+  --panel: #1b1012;
+  --text: #f7eeee;
+  --muted: #b9a6a8;
+  --line: #422125;
+  --red: #ff263f;
+  --deep-red: #8e071d;
+  --white: #fff4f4;
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(ellipse at 80% 0%, rgba(214,255,79,.07), transparent 34rem),
-        var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 80% 0%, #5b101d55, transparent 36rem),
+    radial-gradient(ellipse at 0% 48%, #360c1750, transparent 30rem),
+    var(--bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 
-    a { color: inherit; }
+a { color: inherit; }
 
-    .wrap {
-      width: min(100% - 32px, 720px);
-      margin: 0 auto;
-      padding: 26px 0 34px;
-    }
+.wrap {
+  width: min(100% - 30px, 760px);
+  margin: 0 auto;
+  padding: 24px 0 35px;
+}
 
-    .topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .status::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
+.status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 13px #ff263f99;
+}
 
-    header { padding: 48px 0 30px; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 57px 0 35px;
+}
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
+.hero::after {
+  content: "L";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 5px;
+  color: #ff263f0b;
+  font-size: clamp(220px, 55vw, 390px);
+  line-height: 1;
+  font-weight: 950;
+  font-style: italic;
+  pointer-events: none;
+}
 
-    h1 {
-      margin: 0;
-      font-size: clamp(58px, 15vw, 112px);
-      line-height: .84;
-      letter-spacing: -.085em;
-      font-weight: 900;
-    }
+.eyebrow {
+  margin: 0 0 15px;
+  color: #ff6474;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .23em;
+  text-transform: uppercase;
+}
 
-    .hero-note {
-      margin: 22px 0 0;
-      max-width: 460px;
-      color: #d7d0c3;
-      font-size: clamp(16px, 3.8vw, 20px);
-      line-height: 1.5;
-    }
+h1 {
+  margin: 0;
+  font-size: clamp(64px, 16vw, 122px);
+  line-height: .82;
+  letter-spacing: -.09em;
+  font-weight: 950;
+  text-shadow: 0 0 45px #ff263f18;
+}
 
-    .rule {
-      width: 58px;
-      height: 4px;
-      margin-top: 24px;
-      background: var(--accent);
-    }
+.hero-subtitle {
+  margin: 23px 0 0;
+  max-width: 480px;
+  color: #e1cfd1;
+  font-size: clamp(16px, 4vw, 21px);
+  line-height: 1.5;
+}
 
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-    }
+.hero-line {
+  width: 76px;
+  height: 4px;
+  margin-top: 25px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff263f, #ff8b69);
+  box-shadow: 0 0 20px #ff263f66;
+}
 
-    .section-label::before {
-      content: "";
-      width: 18px;
-      height: 1px;
-      background: var(--accent);
-    }
+.section {
+  margin-top: 32px;
+}
 
-    .support {
-      padding: 22px;
-      border: 1px solid #4b4b3c;
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(214,255,79,.075), transparent 55%),
-        var(--panel);
-      box-shadow: 0 16px 45px rgba(0,0,0,.17);
-    }
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: #d6bfc2;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
 
-    .support h2 {
-      margin: 0;
-      font-size: clamp(24px, 5.5vw, 34px);
-      line-height: 1.08;
-      letter-spacing: -.04em;
-    }
+.section-label::before {
+  content: "";
+  width: 19px;
+  height: 2px;
+  background: var(--red);
+  box-shadow: 0 0 10px #ff263f77;
+}
 
-    .support-copy {
-      margin: 10px 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
+.panel {
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #261215, #171011 75%);
+  box-shadow: 0 18px 55px #00000035;
+}
 
-    .card-label {
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
+.panel h2 {
+  margin: 0;
+  font-size: clamp(24px, 5.7vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+}
 
-    .card-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 15px 14px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(0,0,0,.24);
-    }
+.description {
+  margin: 12px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
 
-    .card-number {
-      font-variant-numeric: tabular-nums;
-      font-size: clamp(17px, 4.2vw, 23px);
-      font-weight: 750;
-      letter-spacing: .035em;
-      overflow-wrap: anywhere;
-    }
+.card-label {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
 
-    button {
-      flex: 0 0 auto;
-      border: 0;
-      border-radius: 9px;
-      padding: 11px 13px;
-      background: var(--accent);
-      color: #171811;
-      font: inherit;
-      font-size: 12px;
-      font-weight: 850;
-      cursor: pointer;
-    }
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #57232c;
+  border-radius: 12px;
+  background: #0d0809;
+}
 
-    button:hover { filter: brightness(1.06); }
+.card-number {
+  font-size: clamp(16px, 4vw, 23px);
+  font-weight: 800;
+  letter-spacing: .025em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
 
-    button:focus-visible,
-    a:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 4px;
-    }
+.gradient-button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  padding: 14px 19px;
+  border: 1px solid #ff6576;
+  border-radius: 11px;
+  color: white;
+  background: linear-gradient(
+    110deg,
+    #8c061b,
+    #f51f3b,
+    #a00a29,
+    #ff4d42
+  );
+  background-size: 280% 100%;
+  box-shadow: 0 5px 22px #e5133433;
+  text-align: center;
+  text-decoration: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
+  cursor: pointer;
+  animation: gradientFlow 7s ease infinite;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
 
-    .copy-status {
-      min-height: 18px;
-      margin: 8px 0 0;
-      color: var(--accent);
-      font-size: 12px;
-    }
+.gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px #f51f3b55;
+}
 
-    .repertoire {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-top: 14px;
-      padding: 18px 20px;
-      border-radius: 14px;
-      background: var(--accent);
-      color: #171811;
-      text-decoration: none;
-      font-weight: 850;
-      transition: transform .18s ease, filter .18s ease;
-    }
+.gradient-button:active {
+  transform: translateY(0);
+}
 
-    .repertoire:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.04);
-    }
+.gradient-button:focus-visible,
+.social:focus-visible,
+.repertoire:focus-visible {
+  outline: 3px solid #ff8b9a;
+  outline-offset: 4px;
+}
 
-    .repertoire small {
-      display: block;
-      margin-top: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      opacity: .75;
-    }
+.card-row .gradient-button {
+  flex-shrink: 0;
+  padding: 12px 14px;
+  font-size: 12px;
+}
 
-    .arrow { font-size: 26px; }
+.copy-status {
+  min-height: 18px;
+  margin: 8px 0 0;
+  color: #ff8b9a;
+  font-size: 12px;
+}
 
-    .socials { margin-top: 34px; }
+.repertoire {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 19px 20px;
+  border: 1px solid #ff4b60;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #370b14, #871126, #390b14);
+  background-size: 220% 100%;
+  text-decoration: none;
+  box-shadow: 0 8px 30px #00000025;
+  animation: gradientFlow 9s ease infinite;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
 
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
+.repertoire:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px #e5133433;
+}
 
-    .social {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      min-height: 58px;
-      padding: 15px 16px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--panel);
-      text-decoration: none;
-      font-weight: 750;
-      transition: border-color .18s ease, background .18s ease;
-    }
+.repertoire strong {
+  display: block;
+  font-size: 16px;
+}
 
-    .social:hover {
-      border-color: #777768;
-      background: #22221f;
-    }
+.repertoire small {
+  display: block;
+  margin-top: 5px;
+  color: #e9c7cc;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 
-    .symbol { color: var(--accent); font-size: 17px; }
-    .out { color: var(--muted); font-size: 14px; }
+.arrow {
+  flex-shrink: 0;
+  color: #ff8b9a;
+  font-size: 27px;
+}
 
-    .bottom-note {
-      margin: 32px 0 0;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
+.offer-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
 
-    .bottom-note strong { color: var(--text); }
+.offer {
+  padding: 21px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #211113, #171011);
+  transition: border-color .2s ease, transform .2s ease;
+}
 
-    @media (max-width: 480px) {
-      .wrap {
-        width: min(100% - 24px, 720px);
-        padding-top: 18px;
-      }
+.offer:hover {
+  border-color: #9e303e;
+  transform: translateY(-2px);
+}
 
-      header { padding: 42px 0 26px; }
-      .support { padding: 17px; border-radius: 15px; }
+.offer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 15px;
+  border: 1px solid #65232e;
+  border-radius: 12px;
+  color: #ff7181;
+  background: #3a1019;
+  font-size: 21px;
+}
 
-      .card-row {
-        align-items: stretch;
-        flex-direction: column;
-      }
+.offer h3 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -.035em;
+}
 
-      .card-number { padding: 2px 0; }
-      .card-row button { width: 100%; padding: 13px; }
-      .social-grid { grid-template-columns: 1fr; }
-      .social { min-height: 54px; }
+.offer p {
+  margin: 10px 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
 
-      .bottom-note {
-        flex-direction: column;
-        line-height: 1.5;
-      }
-    }
+.offer .gradient-button {
+  width: 100%;
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 57px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #1a1012;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 750;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.social:hover {
+  background: #2b1217;
+  border-color: #8d303c;
+}
+
+.social-symbol { color: #ff6478; font-size: 18px; }
+.out { color: var(--muted); }
+
+.footer {
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.footer strong { color: var(--text); }
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (max-width: 500px) {
+  .wrap { width: min(100% - 24px, 760px); padding-top: 18px; }
+  .hero { padding-top: 44px; }
+  .panel { padding: 17px; }
+  .card-row { align-items: stretch; flex-direction: column; }
+  .card-row .gradient-button { width: 100%; }
+  .social-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
 </head>
 
 <body>
-  <main class="wrap">
+<main class="wrap">
 
-    <div class="topline">
-      <span class="status">Independent artist</span>
-      <span>Ukraine · LAPATIN</span>
-    </div>
+  <div class="topline">
+    <span class="status">Музика без компромісів</span>
+    <span>Україна · LAPATIN</span>
+  </div>
 
-    <header>
-      <p class="eyebrow">Музика / живі виступи</p>
-      <h1>LAPATIN</h1>
-      <p class="hero-note">
-        Дякую, що слухаєш і підтримуєш незалежну музику.
+  <header class="hero">
+    <p class="eyebrow">Музикант · Вокал · Live</p>
+    <h1>LAPATIN</h1>
+    <p class="hero-subtitle">
+      Музика, що має голос.<br>
+      Живі виступи та робота над вокалом.
+    </p>
+    <div class="hero-line"></div>
+  </header>
+
+  <section>
+    <p class="section-label">Підтримати артиста</p>
+
+    <div class="panel">
+      <h2>Музика живе завдяки вам.</h2>
+      <p class="description">
+        Якщо тобі відгукуються мої пісні або виступи —
+        підтримай незалежного артиста. Кожен внесок допомагає
+        створювати нову музику та рухатися далі. Дякую!
       </p>
-      <div class="rule" aria-hidden="true"></div>
-    </header>
 
-    <section aria-labelledby="support-title">
-      <p class="section-label">Підтримати артиста</p>
+      <div class="card-label">Номер картки</div>
 
-      <div class="support">
-        <h2 id="support-title">Музика живе завдяки вам.</h2>
-
-        <p class="support-copy">
-          Якщо тобі відгукується моя музика або виступ —
-          буду вдячний за підтримку. Кожен внесок допомагає
-          рухатись далі.
-        </p>
-
-        <div class="card-label">Номер картки</div>
-
-        <div class="card-row">
-          <div class="card-number" id="card-number">
-            4790 7299 5888 9370
-          </div>
-          <button type="button" id="copy-button">Скопіювати</button>
+      <div class="card-row">
+        <div class="card-number" id="card-number">
+          4790 7299 5888 9370
         </div>
-
-        <p class="copy-status" id="copy-status"
-           role="status" aria-live="polite"></p>
+        <button class="gradient-button" type="button" id="copy-button">
+          Скопіювати
+        </button>
       </div>
-    </section>
 
-    <a class="repertoire" href="./songs.html">
-      <span>
-        Знайти пісню в репертуарі
-        <small>Пошук за назвою або виконавцем</small>
-      </span>
-      <span class="arrow" aria-hidden="true">↗</span>
-    </a>
+      <p class="copy-status" id="copy-status"
+         role="status" aria-live="polite"></p>
+    </div>
+  </section>
 
-    <section class="socials" aria-labelledby="social-title">
-      <p class="section-label" id="social-title">
-        Слухати / стежити
-      </p>
+  <a class="repertoire" href="./songs.html">
+    <span>
+      <strong>Знайти пісню в репертуарі</strong>
+      <small>Шукай за назвою пісні або виконавцем</small>
+    </span>
+    <span class="arrow" aria-hidden="true">↗</span>
+  </a>
 
-      <div class="social-grid">
-        <a class="social"
-           href="https://open.spotify.com/artist/4OT9kILqfxxZDUPVoH1VD7"
-           target="_blank" rel="noopener noreferrer">
-          <span><span class="symbol">♫</span> &nbsp;Spotify</span>
-          <span class="out">↗</span>
-        </a>
+  <section class="section">
+    <p class="section-label">Чим можу бути корисним</p>
 
-        <a class="social"
-           href="https://www.youtube.com/channel/UCOSe0Vqapuhc0F8P7oyfOYA"
-           target="_blank" rel="noopener noreferrer">
-          <span><span class="symbol">▶</span> &nbsp;YouTube</span>
-          <span class="out">↗</span>
-        </a>
+    <div class="offer-list">
 
-        <a class="social"
-           href="https://www.tiktok.com/@lapatindima?_t=ZM-8yx1vF1Vwfu&_r=1"
-           target="_blank" rel="noopener noreferrer">
-          <span><span class="symbol">♪</span> &nbsp;TikTok</span>
-          <span class="out">↗</span>
-        </a>
-
-        <a class="social"
+      <article class="offer">
+        <div class="offer-icon" aria-hidden="true">♫</div>
+        <h3>Онлайн-уроки вокалу</h3>
+        <p>
+          Індивідуальні заняття онлайн. Працюємо без зайвої
+          теорії та формальних розспівок: розбираємо пісні,
+          знаходимо помилки у виконанні й шукаємо, як їх виправити.
+          Працюємо над звучанням, подачею та впевненістю у голосі.
+        </p>
+        <a class="gradient-button"
            href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr"
            target="_blank" rel="noopener noreferrer">
-          <span><span class="symbol">◎</span> &nbsp;Instagram</span>
-          <span class="out">↗</span>
+          Записатися на урок ↗
         </a>
-      </div>
-    </section>
+      </article>
 
-    <footer class="bottom-note">
-      <span><strong>LAPATIN</strong> · Independent music</span>
-      <span>Дякую за підтримку ♡</span>
-    </footer>
+      <article class="offer">
+        <div class="offer-icon" aria-hidden="true">♬</div>
+        <h3>Живі виступи на ваших подіях</h3>
+        <p>
+          Запрошуйте LAPATIN на день народження, весілля,
+          корпоратив, приватну вечірку чи іншу особливу подію.
+          Живий вокал, гітара та музика, що створює атмосферу.
+          Деталі, формат і тривалість виступу узгодимо особисто.
+        </p>
+        <a class="gradient-button"
+           href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr"
+           target="_blank" rel="noopener noreferrer">
+          Запросити на виступ ↗
+        </a>
+      </article>
 
-  </main>
+    </div>
+  </section>
 
-  <script>
-    const copyButton = document.getElementById("copy-button");
-    const copyStatus = document.getElementById("copy-status");
-    const cardNumber = "4790 7299 5888 9370";
+  <section class="section">
+    <p class="section-label">Слухати та стежити</p>
 
-    copyButton.addEventListener("click", async () => {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(cardNumber);
-        } else {
-          const field = document.createElement("textarea");
-          field.value = cardNumber;
-          field.style.position = "fixed";
-          field.style.opacity = "0";
-          document.body.appendChild(field);
-          field.select();
+    <div class="social-grid">
+      <a class="social"
+         href="https://open.spotify.com/artist/4OT9kILqfxxZDUPVoH1VD7"
+         target="_blank" rel="noopener noreferrer">
+        <span><span class="social-symbol">♫</span> &nbsp;Spotify</span>
+        <span class="out">↗</span>
+      </a>
 
-          const copied = document.execCommand("copy");
-          field.remove();
+      <a class="social"
+         href="https://www.youtube.com/channel/UCOSe0Vqapuhc0F8P7oyfOYA"
+         target="_blank" rel="noopener noreferrer">
+        <span><span class="social-symbol">▶</span> &nbsp;YouTube</span>
+        <span class="out">↗</span>
+      </a>
 
-          if (!copied) throw new Error("Copy failed");
-        }
+      <a class="social"
+         href="https://www.tiktok.com/@lapatindima?_t=ZM-8yx1vF1Vwfu&_r=1"
+         target="_blank" rel="noopener noreferrer">
+        <span><span class="social-symbol">♪</span> &nbsp;TikTok</span>
+        <span class="out">↗</span>
+      </a>
 
-        copyStatus.textContent = "Номер картки скопійовано.";
-        copyButton.textContent = "Скопійовано ✓";
+      <a class="social"
+         href="https://www.instagram.com/lapa_dimalopatin?igsh=MXM4eG9sbGwydmIwMA%3D%3D&utm_source=qr"
+         target="_blank" rel="noopener noreferrer">
+        <span><span class="social-symbol">◎</span> &nbsp;Instagram</span>
+        <span class="out">↗</span>
+      </a>
+    </div>
+  </section>
 
-        window.setTimeout(() => {
-          copyButton.textContent = "Скопіювати";
-        }, 2200);
+  <footer class="footer">
+    <span><strong>LAPATIN</strong> · Незалежна музика</span>
+    <span>Дякую, що ти тут ♡</span>
+  </footer>
 
-      } catch (error) {
-        copyStatus.textContent =
-          "Не вдалось скопіювати. Номер: " + cardNumber;
-      }
-    });
-  </script>
+</main>
+
+<script>
+const copyButton = document.getElementById("copy-button");
+const copyStatus = document.getElementById("copy-status");
+const cardNumber = "4790 7299 5888 9370";
+
+copyButton.addEventListener("click", async () => {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(cardNumber);
+    } else {
+      const field = document.createElement("textarea");
+      field.value = cardNumber;
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+
+      const copied = document.execCommand("copy");
+      field.remove();
+
+      if (!copied) throw new Error("Copy failed");
+    }
+
+    copyStatus.textContent = "Номер картки скопійовано!";
+    copyButton.textContent = "Скопійовано ✓";
+
+    window.setTimeout(() => {
+      copyButton.textContent = "Скопіювати";
+    }, 2200);
+
+  } catch (error) {
+    copyStatus.textContent =
+      "Не вдалося скопіювати. Номер: " + cardNumber;
+  }
+});
+</script>
+
 </body>
 </html>
